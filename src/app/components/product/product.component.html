@@ -1,1 +1,10 @@
-<p>product works!</p>
+<ng-container *ngIf="product">
+  <h2>{{ product.title }}</h2>
+  <p>$ {{ product.price }}</p>
+  <img [ngSrc]="product.images[0]" alt="" width="640" height="480" />
+</ng-container>
+<ng-container *ngIf="!product">
+  <p>There isn't a product</p>
+</ng-container>
+
+<!-- we use ng-template in order to not add more elements to the dom -->
